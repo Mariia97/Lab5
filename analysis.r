@@ -34,3 +34,18 @@ ds_all <-rbind(train, test)
 
 mean_std <- grep('mean|std', features)
 ds_sup <- ds_all[, c(1, 2, mean_std +2)]
+
+# 3. Use descriptive activity names to rename activities in the dataset
+
+activity_labels <- read.table('./UCI HAR Dataset/activity_labels.txt', header = FALSE)
+
+train_labels <- read.table("./UCI HAR Dataset/train/y_train.txt")
+test_labels <- read.table("./UCI HAR Dataset/test/y_test.txt")
+
+train_labels <- merge(activity_labels, train_labels,by=c("V1"))
+test_labels <- merge(activity_labels, test_labels,by=c("V1"))
+
+labels <-rbind(train_labels, test_labels)
+labels$Activity <-labels$V2
+
+ds_labels <-cbind(labels, ds_sub)
