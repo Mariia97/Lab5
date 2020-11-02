@@ -5,4 +5,5 @@ One of the most exciting areas in all of data science right now is wearable comp
 1. Merges the training and the test sets to create data set for analysis.
 2. Computes mean and standard deviation for each variable.
 3. Uses label to name the activities in the data set.
-4. Creates independent tidy data set with the average of each variable for each activity across each subject.
+4. Appropriately labels the data set with descriptive variable names.
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
